@@ -1,27 +1,3 @@
-config KERNEL_4_20
-    def_bool y
-config KERNEL_5_0
-    def_bool y
-config KERNEL_5_1
-    def_bool y
-config KERNEL_5_2
-    def_bool y
-config KERNEL_5_3
-    def_bool y
-config KERNEL_5_4
-    def_bool y
-config KERNEL_5_5
-    def_bool y
-config KERNEL_5_6
-    def_bool y
-config KERNEL_5_7
-    def_bool y
-config KERNEL_5_8
-    def_bool y
-config KERNEL_5_9
-    def_bool y
-config KERNEL_5_10
-    def_bool y
 config KERNEL_5_11
     def_bool y
 config KERNEL_5_12
