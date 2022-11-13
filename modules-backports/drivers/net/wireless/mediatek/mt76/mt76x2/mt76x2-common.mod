@@ -1,0 +1,2 @@
+/home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt76x2/eeprom.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt76x2/mac.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt76x2/init.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt76x2/phy.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt76x2/mcu.o
+

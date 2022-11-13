@@ -1,0 +1,2 @@
+/home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/main.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/regd.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/hw.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/key.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/dfs_pattern_detector.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/ath/dfs_pri_detector.o
+

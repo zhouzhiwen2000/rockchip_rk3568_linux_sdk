@@ -1,0 +1,2 @@
+/home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_core.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_8192e.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_8723b.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_8723a.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/realtek/rtl8xxxu/rtl8xxxu_8192c.o
+

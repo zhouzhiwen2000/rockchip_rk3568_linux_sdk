@@ -1,0 +1,2 @@
+/home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/intel/iwlegacy/4965.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/intel/iwlegacy/4965-mac.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/intel/iwlegacy/4965-rs.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/intel/iwlegacy/4965-calib.o
+

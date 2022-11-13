@@ -1,0 +1,2 @@
+/home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt7615/pci.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt7615/pci_init.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt7615/dma.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt7615/pci_mac.o /home/ubuntu/photonicat_lede_factory/modules-backports/drivers/net/wireless/mediatek/mt76/mt7615/mmio.o
+
