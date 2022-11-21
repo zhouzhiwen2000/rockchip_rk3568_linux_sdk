@@ -1232,6 +1232,7 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
 			ret = -EOPNOTSUPP;
 			goto err_pci_free_region;
 		}
+
 		ab_pci->msi_config = &ath11k_msi_config[0];
 		break;
 	case QCN9074_DEVICE_ID:
@@ -1278,8 +1279,10 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
 	}
 
 	ret = ath11k_hal_srng_init(ab);
-	if (ret)
+	if (ret) {
+		ath11k_err(ab, "failed to initialize HAL SRNG: %d\n", ret);
 		goto err_mhi_unregister;
+	}
 
 	ret = ath11k_ce_alloc_pipes(ab);
 	if (ret) {
@@ -1288,7 +1291,6 @@ static int ath11k_pci_probe(struct pci_dev *pdev,
 	}
 
 	ath11k_pci_init_qmi_ce_config(ab);
-
 	ret = ath11k_pci_config_irq(ab);
 	if (ret) {
 		ath11k_err(ab, "failed to config irq: %d\n", ret);

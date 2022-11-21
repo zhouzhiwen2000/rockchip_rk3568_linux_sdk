@@ -267,6 +267,40 @@ function build_openwrt_sdimg()
 	gzip -f "${TARGET_IMG}"
 }
 
+function build_debian_sdimg()
+{
+	IMAGE_PATH="${TOP_DIR}/rockdev"
+	BASE_IMG="${TOP_DIR}/device/rockchip/rockimg/debian-sd.img.gz"
+	TARGET_IMG="${IMAGE_PATH}/debian-sdcard.img"
+	BOOT_IMG="${IMAGE_PATH}/debian-sdbootfs.img"
+
+	if [ ! -f "${TOP_DIR}/kernel/arch/arm64/boot/Image" ]; then
+		echo "No kernel found, please build kernel first!"
+		exit 1
+	fi
+
+	if [ ! -f "${IMAGE_PATH}/rootfs.img" ]; then
+		echo "No Debian system image found, please build Debian rootfs first!"
+		exit 1
+	fi
+
+	dd if=/dev/zero of="${BOOT_IMG}" bs=1M count=128
+	/sbin/mkfs.vfat -F 32 "${BOOT_IMG}"
+
+	mmd -i "${BOOT_IMG}" ::extlinux
+	mcopy -i "${BOOT_IMG}" "${TOP_DIR}/device/rockchip/rockimg/debian-sd-extlinux.conf" ::extlinux/extlinux.conf
+	mcopy -i "${BOOT_IMG}" "${TOP_DIR}/kernel/arch/arm64/boot/Image" ::Image
+	mcopy -i "${BOOT_IMG}" "${TOP_DIR}/kernel/arch/arm64/boot/dts/rockchip/rk3568-photonicat-npu.dtb" ::rk3568-photonicat-npu.dtb
+
+	gunzip -c "${BASE_IMG}" > "${TARGET_IMG}"
+	dd if="${BOOT_IMG}" of="${TARGET_IMG}" bs=1M count=128 seek=1 conv=notrunc
+	dd if="${IMAGE_PATH}/rootfs.img" of="${TARGET_IMG}" bs=1M count=4096 seek=129 conv=notrunc
+
+	rm -f "${BOOT_IMG}"
+
+	gzip -f "${TARGET_IMG}"
+}
+
 function build_openwrt_sdupdateimg()
 {
 	IMAGE_PATH="${TOP_DIR}/rockdev"
@@ -353,6 +387,7 @@ function usage()
 	echo "external/<pkg>     -build packages in the dir of external/*"
 	echo "openwrt-sdimg      -build bootable OpenWRT SD card image which can be used in uboot"
 	echo "openwrt-sdupdateimg -build bootable SD card for update OpenWRT on eMMC, can be used in uboot"
+	echo "debian-sdimg       -build bootable Debian SD card image which can be used in uboot"
 	echo ""
 	echo "Default option is 'allff'."
 }
@@ -1376,6 +1411,7 @@ for option in ${OPTIONS}; do
 		app/*|external/*) build_pkg $option ;;
 		openwrt-sdimg) build_openwrt_sdimg ;;
 		openwrt-sdupdateimg) build_openwrt_sdupdateimg ;;
+		debian-sdimg) build_debian_sdimg ;;
 		*) usage ;;
 	esac
 done

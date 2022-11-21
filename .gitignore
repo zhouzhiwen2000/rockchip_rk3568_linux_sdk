@@ -7,6 +7,8 @@
 /rockdev/*.gz
 /rockdev/*.xz
 /rockdev/*.bz2
+/rockdev/parameter.txt
+/rockdev/MiniLoaderAll.bin
 *.o
 /external/*.so
 /external/*.a
@@ -20,3 +22,5 @@
 /debian/ubuntu-build-service/buster-desktop-arm64/live-image-amd64.hybrid.iso.zsync
 /rockdev/sdcard.img.gz
 /modules-backports/Kconfig.kernel
+/modules-backports/Kconfig.versions
+/modules-backports/backport-include/backport/autoconf.h
